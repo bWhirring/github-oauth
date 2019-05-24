@@ -1,0 +1,33 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var inversify_express_utils_1 = require("inversify-express-utils");
+var HomeController = /** @class */ (function () {
+    function HomeController() {
+        this.clientId = "c3a19c203e57e32ffd8a";
+    }
+    HomeController.prototype.get = function () {
+        var href = "https://github.com/login/oauth/authorize?client_id=" + this.clientId + "&redirect_uri=http://localhost:8888/api/oauth";
+        return "<html><div style='color: red'>\n      <a href=" + href + ">Login with GitHub</a>\n    </div></html>";
+    };
+    __decorate([
+        inversify_express_utils_1.httpGet("/"),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", String)
+    ], HomeController.prototype, "get", null);
+    HomeController = __decorate([
+        inversify_express_utils_1.controller("/")
+    ], HomeController);
+    return HomeController;
+}());
+exports.HomeController = HomeController;
+//# sourceMappingURL=home.js.map
