@@ -11,7 +11,7 @@
     "start": "nodemon dist/index.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "express": "^4.16.3",
     "inversify": "^4.13.0",
     "inversify-express-utils": "^6.1.0",
